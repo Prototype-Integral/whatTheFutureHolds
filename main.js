@@ -1,8 +1,8 @@
 const whatTheFutureHolds = {
-    _people: ['Bob Saget', 'Elon Musk', 'Charlie Sheen', 'Donald Trump', 'Barak Obama', 'Batman', 'Rick Astley', 'George Hotz',],
+    _people: ['Bob Saget', 'Elon Musk', 'Charlie Sheen', 'Donald Trump', 'Barak Obama', 'Batman', 'Rick Astley', 'George Hotz'],
     _things: ['A freshly plucked plum', 'the Decleration of Independence', 'the Mona Lisa', 'A Plastic Fork', 'A Grizzly Bear'],
     _places: ['Atlantis', 'New New York', 'Rapture', 'Avalon', 'Val-Hala', 'Mars (The Planet)', 'West Philidalphia'],
-    _reasons: ['in the name of science', 'to bring about a new age of prosperity', 'just for the heck of it', 'because they saw it on the internet', 'for justice', 'for legal reasons'],
+    _reasons: ['in the name of science', 'to bring about a new age of prosperity', 'just for the heck of it', 'because of an internet meme', 'for justice', 'for legal reasons'],
     //Getters and Setters for possible outcomes
     set people(person){
         if(typeof person === 'String'){this.people.push(person)}
@@ -29,25 +29,25 @@ const whatTheFutureHolds = {
         return this._reasons
     },
     //Randomly selects possible outcomes
+    randomizer(array) {
+        //Generates random zero index number that is not longer then length of input
+        return Math.floor(Math.random() * array.length)
+    },
     randomPerson() {
         //Returns random person from 'people' array, no limit on array length.
-        const index = Math.floor(Math.random() * this.people.length);
-        return this.people[index]
+        return this.people[this.randomizer(this.people)]
     },
     randomThing() {
         //Returns random person from 'things' array, no limit on array length.
-        const index = Math.floor(Math.random() * this.things.length);
-        return this.things[index]
+        return this.things[this.randomizer(this.things)]
     },
     randomPlace() {
         //Returns random person from 'places' array, no limit on array length.
-        const index = Math.floor(Math.random() * this.places.length);
-        return this.places[index]
+        return this.places[this.randomizer(this.places)]
     },
     randomReason() {
         //Returns random person from 'reasons' array, no limit on array length.
-        const index = Math.floor(Math.random() * this.reasons.length);
-        return this.reasons[index]
+        return this.reasons[this.randomizer(this.reasons)]
     },
     getDate() {
         const today = new Date()
