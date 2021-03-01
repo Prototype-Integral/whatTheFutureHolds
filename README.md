@@ -25,7 +25,7 @@ This program will generate a random prediction for the future.
 
 * `whatTheFutureHolds.reasons(*reason*)`
 
-    werer *reason* = give sombody in the future a new reason for doing something
+    where *reason* = give sombody in the future a new reason for doing something
 
 ## **Return** Details
 * The year for the prediction is random
